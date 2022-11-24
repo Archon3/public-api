@@ -1,0 +1,33 @@
+server:
+  port: 8080  # Spring boot Server port
+
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  h2:
+    console:
+      enabled: true  # H2 웹 콘솔을 사용하겠다는 의미
+      path: /test_db  # 콘솔의 경로
+
+  datasource:
+    driver-class-name: org.h2.Driver  #h2 드라이버 설정
+    url: jdbc:h2:file:./db/test_db;AUTO_SERVER=TRUE  #접속 URL
+    username: sa  # 사용자 이름 (로그인 시 사용)
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+stanRegin:
+  encoding: KM7QmNw3e6W2nBixEGAwkueVWo8Cgh7WFkC6BRvQ35vK%2BWThhfV%2Bv5ZwZN76Ivh3fY%2Fjj5fvfKTnF8ru5Q1pZg%3D%3D
+  decoding: KM7QmNw3e6W2nBixEGAwkueVWo8Cgh7WFkC6BRvQ35vK+WThhfV+v5ZwZN76Ivh3fY/jj5fvfKTnF8ru5Q1pZg==
+  url: http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList
